@@ -1,8 +1,9 @@
 import Navigo from 'navigo';
 import { renderHome } from './pages/home.js';
-import { renderDashboard } from './pages/dashboard.js';
-import { renderProfile } from './pages/profile.js';
+import { renderServices } from './pages/services.js';
 import { renderAbout } from './pages/about.js';
+import { renderBlog } from './pages/blog.js';
+import { renderContact } from './pages/contact.js';
 import { renderNavigation, setupNavigation, updateActiveLink } from './components/navigation.js';
 
 class Router {
@@ -15,9 +16,10 @@ class Router {
     // Set up routes
     this.router
       .on('/', () => this.renderPage(renderHome))
-      .on('/dashboard', () => this.renderPage(renderDashboard))
-      .on('/profile', () => this.renderPage(renderProfile))
+      .on('/services', () => this.renderPage(renderServices))
       .on('/about', () => this.renderPage(renderAbout))
+      .on('/blog', () => this.renderPage(renderBlog))
+      .on('/contact', () => this.renderPage(renderContact))
       .notFound(() => this.renderPage(() => `
         <div class="page">
           <h1>404 - Page Not Found</h1>
