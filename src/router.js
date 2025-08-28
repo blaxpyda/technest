@@ -20,6 +20,7 @@ class Router {
       .on('/about', () => this.renderPage(renderAbout))
       .on('/blog', () => this.renderPage(renderBlog))
       .on('/contact', () => this.renderPage(renderContact))
+      .on('/quote', () => this.renderPage(renderContact))
       .notFound(() => this.renderPage(() => `
         <div class="page">
           <h1>404 - Page Not Found</h1>
