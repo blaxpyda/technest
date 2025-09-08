@@ -5,6 +5,8 @@ import { renderAbout } from './pages/about.js';
 import { renderBlog } from './pages/blog.js';
 import { renderContact } from './pages/contact.js';
 import { renderNavigation, setupNavigation, updateActiveLink } from './components/navigation.js';
+import { renderFooter, setupFooter } from './components/footer.js';
+
 
 class Router {
   constructor() {
@@ -58,9 +60,11 @@ class Router {
       <main id="content" class="main-content">
         <!-- Page content will be rendered here -->
       </main>
+      ${await renderFooter()}
     `;
     
     setupNavigation();
+    setupFooter();
   }
 }
 
